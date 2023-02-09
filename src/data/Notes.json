@@ -1,0 +1,6 @@
+{
+  "standard_intervals" : ["P1", "m2", "Mj2", "m3", "Mj3", "P4", "TT", "P5", "m6", "Mj6", "m7", "Mj7", "P8"],
+  "alternate_intervals" : ["d2", "A1", "d3", "A2", "d4", "A3", "A4/d5", "d6", "A5", "d7", "A6", "d8", "A7"],
+  "chromatic_flat" : ["C", "D\u266d", "D", "E\u266d", "E", "F", "G\u266d", "G", "A\u266d", "A", "B\u266d", "B"],
+  "chromatic_sharp" : ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+}
