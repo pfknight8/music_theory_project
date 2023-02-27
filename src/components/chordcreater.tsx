@@ -9,6 +9,7 @@ const ChordCreator = () => {
   }
   const [noteSelect, setNoteSelect] = useState("C")
   const [chordList, setChordList] = useState<Array<ChordSet>>([])
+  const [noteQual, setNoteQual] = useState("natural")
 
   const MakeTriads = (note: any) => {
     let indexOfNote = Notes.chromatic_flat.indexOf(note);
@@ -28,11 +29,17 @@ const ChordCreator = () => {
 
   const handleSubmitChords = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    // CharCodeAt(0), 65-90
+    if (noteSelect.length>1 || (noteSelect.charCodeAt(0) < 65 || noteSelect.charCodeAt(0) > 71)) {
+      alert('Not a valid note!')
+    }
     MakeTriads(noteSelect)
   }
 
-  const handleNoteSelect = () => {
-    setNoteSelect("C")
+  const handleNoteSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // e.preventDefault()
+    let noteEntered = e.target.value.toUpperCase()
+    setNoteSelect(noteEntered)
   }
 
   return (
@@ -41,7 +48,34 @@ const ChordCreator = () => {
       <p>{Notes.chromatic_flat}</p>
       <form onSubmit={handleSubmitChords}>
         <label htmlFor="note">Enter a Note:</label>
-        <input type="text" id="note" onChange={handleNoteSelect}></input>
+        <input type="text" id="note" name="note" onChange={handleNoteSelect}/>
+        <div className="radio-holder">
+          <input
+            name="shap-flat-select"
+            type="radio"
+            className="natural-opt"
+            value="natural"
+            defaultChecked
+            onChange={() => setNoteQual("natural")}
+          />
+          <label htmlFor="natural-opt">Natural (&#x266E;)</label>
+          <input
+            name="shap-flat-select"
+            type="radio"
+            className="sharp-opt"
+            value="sharp"
+            onChange={() => setNoteQual("sharp")}
+          />
+          <label htmlFor="sharp-opt">Sharp (#)</label>
+          <input
+            name="shap-flat-select"
+            type="radio"
+            className="flat-opt"
+            value="flat"
+            onChange={() => setNoteQual("flat")}
+          />
+          <label htmlFor="flat-opt">Flat (&#x266D;)</label>
+        </div>
         <button id="note-select" type="submit">Create Chords</button>
       </form>
       <section id="triad-list">
