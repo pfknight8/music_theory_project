@@ -38,24 +38,24 @@ const ChordCreator = () => {
   const handleSubmitChords = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     // CharCodeAt(0), 65-90 for A to G.
-    if (noteSelect.length>1 || (noteSelect.charCodeAt(0) < 65 || noteSelect.charCodeAt(0) > 71)) {
+    if (noteSelect.charCodeAt(0) < 65 || noteSelect.charCodeAt(0) > 71){
       alert('Not a valid note!')
     }
     let noteSearch = ""
     let indexOfNote: number = 0
     if (noteQual === "sharp"){
-      noteSearch = `${noteSelect}`+`\u266f`
-      if (noteSearch === "B\u266f") {
+      noteSearch = `${noteSelect}\u266f`
+      if (noteSearch === "B\u266f"){
         noteSearch = "C"
-      } else if (noteSearch === "E\u266f") {
+      } else if (noteSearch === "E\u266f"){
         noteSearch = "F"
       }
       indexOfNote = Notes.chromatic_sharp.indexOf(noteSearch)
     } else if (noteQual === "flat"){
-      noteSearch = `${noteSelect}`+`\u266d`
-      if (noteSearch === "C\u266d") {
+      noteSearch = `${noteSelect}\u266d`
+      if (noteSearch === "C\u266d"){
         noteSearch = "B"
-      } else if (noteSearch === "F\u266d") {
+      } else if (noteSearch === "F\u266d"){
         noteSearch = "E"
       }
       indexOfNote = Notes.chromatic_flat.indexOf(noteSearch)

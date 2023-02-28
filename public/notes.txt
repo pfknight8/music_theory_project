@@ -1,0 +1,4 @@
+I have the chord creator working on a basic array, using semitones in order to get the notes that are a part of the chord. This works well in a technical sense, but causes some errors in the way things actually work in written music.
+For example, a diminished A-flat chord is currently written as {A-flat + B + D}, which would make it look like a {1-2-4} scheme as written, but conventionally the idea would be to keep it in a {1-3-5} scheme (more specifically {root-m3-d5}) with the letters and append accidentals, such as {A-flat + C-flat + E-doubleflat}. Notice, C-flat is enharmonic to B (natural), and E-doubleflat would be enharmonic to D (natural), so long as we are talking 12-TET.
+
+Should attempt to add this correction into the program, but for now, we'll focus on making the app work generally, and get into the weeds later.

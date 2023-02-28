@@ -3,7 +3,7 @@
 const Docs = () => {
   return (
     <div id="docs-page">
-      <p>Nothing to see here...yet.</p>
+      <p>This page will handle the rendering of reference materials.</p>
     </div>
   )
 }

@@ -6,10 +6,10 @@ const Home = () => {
 
   return (
     <div id="Home-div">
-      <p>Home page rendered.</p>
+      <p>Home page rendered. This will ultimately be a landing page, other pages will be constructed to hold the different types of components.</p>
       <section>
-        <h2>Title 1</h2>
-        <button className="component-btn" onClick={() => toggleChordComp(!showChordComp)}>Chords</button>
+        <h2>Title</h2>
+        <button className="component-btn" onClick={() => toggleChordComp(!showChordComp)}>{showChordComp ? "Arrivederci!" : "Chords"}</button>
         <div className="component-holder">
           {showChordComp ? <ChordCreator /> : (<p>Nothing to show here.</p>) }
         </div>
