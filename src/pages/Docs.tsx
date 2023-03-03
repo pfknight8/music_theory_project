@@ -1,4 +1,4 @@
-// This should behave as an about page, as well as providing background Docsrmation. Kinda like a documentation site.
+// This page will hold informational docs, such as the about page, and music theory explanations. Make sure to have a good format scheme for docs to fit into nicely.
 
 const Docs = () => {
   return (

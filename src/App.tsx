@@ -3,6 +3,7 @@ import './styles/App.css';
 import HeaderNav from './components/HeaderNav';
 import Home from './pages/Home';
 import Docs from './pages/Docs';
+import Interactives from './pages/Interactives';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/documents" element={<Docs />} />
+          <Route path="/interactive" element={<Interactives />} />
         </Routes>
       </main>
     </div>

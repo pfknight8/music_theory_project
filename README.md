@@ -10,7 +10,7 @@
 ## Useful Links
 
 - [Trello Board](https://trello.com/b/6jddnXT3/musicaltheories)
-- [LinkedIn](https://www.linkedin.com/in/patrick-f-knight/)
+- My [LinkedIn](https://www.linkedin.com/in/patrick-f-knight/)
 - [Component Diagram](https://drive.google.com/file/d/1Ah0cbRoWceVaiB-e1bGWyMIVJP9C-son/view?usp=share_link)
 
 ---
