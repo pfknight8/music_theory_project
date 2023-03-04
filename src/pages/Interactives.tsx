@@ -7,7 +7,7 @@ const Interactives = () => {
 
   return (
     <div id="docs-page">
-      <p>This page will handle the rendering of interactive materials.</p>
+      <h1>Rendering of interactive materials</h1>
       <section>
         <h2>Title</h2>
         <button className="component-btn" onClick={() => toggleChordComp(!showChordComp)}>{showChordComp ? "Arrivederci!" : "Chords"}</button>

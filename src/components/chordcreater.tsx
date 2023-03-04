@@ -23,11 +23,7 @@ const ChordCreator = () => {
       let noteArrLtr: any[] = [];
       for (let k=0; k<noteArr.length; k++) {
         let noteIndex = noteArr[k]%12
-        if (noteQual === "flat"){
-          noteArrLtr.push(Notes.chromatic_flat[noteIndex])
-        } else {
-          noteArrLtr.push(Notes.chromatic_sharp[noteIndex])
-        }
+        noteArrLtr.push(Notes.chromatic[noteIndex])
       }
       chordArr.push({"name": element.name, "steps": noteArrLtr.splice(0)})
       noteArr = []

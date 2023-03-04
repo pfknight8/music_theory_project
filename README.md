@@ -1,9 +1,12 @@
 # Music Theory Application
+
+### By: Patrick Knight
+### Started: February 2023
 ---
 
 ## Description
 
-#### This project is based on an old excel file of mine that I built to teach myself music theory while learning the bass guitar. I figured it would make for a simple enough project to follow, whilest being a deep enough subject for adding more complex functionality over time. This project serves as my first foray into coding in public, and it also is my first project built with TypeScript and React.
+This project is my first project built with TypeScript. It is based on an old excel file that I built to teach myself music theory while learning the bass guitar. I figured it would make for a simple enough project to follow, whilest being a deep enough subject for adding more complex functionality over time. The goal is to get/maintain practice with TypeScript and React.
 
 ---
 
