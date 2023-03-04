@@ -8,9 +8,7 @@ import Interactives from './pages/Interactives';
 function App() {
   return (
     <div id="App">
-      <header className="App-header">
-        <HeaderNav />
-      </header>
+      <HeaderNav />
       <main id="App-body">
         <Routes>
           <Route path="/" element={<Home />} />
