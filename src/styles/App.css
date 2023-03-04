@@ -19,8 +19,21 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-link {
+  margin: 0 10px;
+  color: #ECEEE8;
+}
+
+.component-link {
+  /* font-size: calc(10px + 1vh); */
+  color: #ECEEE8;
 }
 
 @keyframes App-logo-spin {
