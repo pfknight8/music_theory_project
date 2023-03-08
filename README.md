@@ -9,7 +9,12 @@
 This project is my first project built with TypeScript. It is based on an old excel file that I built to teach myself music theory while learning the bass guitar. I figured it would make for a simple enough project to follow, whilest being a deep enough subject for adding more complex functionality over time. The goal is to get/maintain practice with TypeScript and React.
 
 ---
+## Working Screenshots
 
+#### As of 3-7-23
+<img alt="entity relationship diagram" width='600' src="./public/Building_Music_App.png" />
+
+---
 ## Useful Links
 
 - [Trello Board](https://trello.com/b/6jddnXT3/musicaltheories)

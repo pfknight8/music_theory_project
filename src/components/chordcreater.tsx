@@ -12,7 +12,7 @@ const ChordCreator = () => {
   const [noteQual, setNoteQual] = useState("natural")
 
   // This function is used to make the chords based on the selected note and the json files provided.
-  const MakeChords = (indexOfNote: any) => {
+  const MakeChords = (indexOfNote: number) => {
     let chordArr: any[] = [];
     Notes.chord_semitones.forEach(element => {
       let noteArr: any[] = [];
