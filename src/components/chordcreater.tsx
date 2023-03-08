@@ -1,4 +1,3 @@
-// Write the code that implements our chord creater here.
 import { useState } from "react"
 import Notes from "../data/Notes.json"
 import NoteSelector from "./noteSelector"
@@ -12,7 +11,8 @@ const ChordCreator = () => {
   const [chordList, setChordList] = useState<Array<ChordSet>>([])
   const [noteQual, setNoteQual] = useState("natural")
 
-  const MakeTriads = (indexOfNote: any) => {
+  // This function is used to make the chords based on the selected note and the json files provided.
+  const MakeChords = (indexOfNote: any) => {
     let chordArr: any[] = [];
     Notes.chord_semitones.forEach(element => {
       let noteArr: any[] = [];
@@ -31,13 +31,10 @@ const ChordCreator = () => {
     setChordList(chordArr)
   }
 
+  // This function is what fires when the 'create chords' button is clicked. Currently, the functions here use the letter of the note, so some conversion of the notes to proper sharp/natural/flat status needs to be done in order to feed the proper index into the MakeChords function.
   const handleSubmitChords = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // CharCodeAt(0), 65-90 for A to G.
-    if (noteSelect.charCodeAt(0) < 65 || noteSelect.charCodeAt(0) > 71){
-      alert('Not a valid note!')
-    }
-    let noteSearch = ""
+    let noteSearch: string = ""
     let indexOfNote: number = 0
     if (noteQual === "sharp"){
       noteSearch = `${noteSelect}\u266f`
@@ -59,22 +56,13 @@ const ChordCreator = () => {
       noteSearch = noteSelect
       indexOfNote = Notes.chromatic_sharp.indexOf(noteSearch)
     }
-    MakeTriads(indexOfNote)
+    MakeChords(indexOfNote)
   }
-
-  // const handleNoteSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   // e.preventDefault()
-  //   let noteEntered = e.target.value.toUpperCase()
-  //   setNoteSelect(noteEntered)
-  // }
 
   return (
     <div className="chord-creator">
       <p>Chord component rendered.</p>
-      <p>{Notes.chromatic_flat}</p>
       <form onSubmit={handleSubmitChords}>
-        {/* <label htmlFor="note">Enter a Note:</label>
-        <input type="text" id="note" name="note" onChange={handleNoteSelect}/> */}
         <NoteSelector setNoteSelect={setNoteSelect} setNoteQual={setNoteQual}/>
         <button id="note-select" type="submit">Create Chords</button>
       </form>
@@ -85,7 +73,9 @@ const ChordCreator = () => {
             {item.name} = {item.steps.join('-')}
           </div>
         ))}</div>
-        <p>A note on Inversions (link to page) and voicing (link to page).</p>
+        <h3>Seventh Chords</h3>
+        <p>This will be replaced; will need to refactor this section to display better, but for now have it set up in a crude way just to make sure that the basic functionality works.</p>
+        <p>See pages on Inversions (link to page) and voicing (link to page).</p>
       </section>
     </div>
   )
