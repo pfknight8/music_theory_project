@@ -22,3 +22,4 @@ This project is my first project built with TypeScript. It is based on an old ex
 
 - TypeScript [docs](https://www.typescriptlang.org/docs/)
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- {Will have references to materials that I use to build info pages}
