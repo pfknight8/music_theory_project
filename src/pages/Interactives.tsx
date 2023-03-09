@@ -7,12 +7,13 @@ const Interactives = () => {
   interface Feature {
     [key: string]: boolean
   };
-  const initialFeatures: Feature = {"chords": false, "scales": false}
+  const initialFeatures: Feature = {"placeholder": true, "chords": false, "scales": false}
 
   const [showFeatureSet, toggleFeatureSet] = useState(initialFeatures)
 
   const handleFeatures = (feature: string) => {
-    let updateFeature = {[feature]: !showFeatureSet[feature]}
+    let updateFeature = {[feature]: !showFeatureSet[feature], placeholder: false}
+    if (!updateFeature[feature]){updateFeature.placeholder = true}
     let newState: Feature = {...initialFeatures, ...updateFeature}
     toggleFeatureSet(newState)
   }
@@ -28,6 +29,7 @@ const Interactives = () => {
       <section>
         <h2>Render Here</h2>
         <div className="component-holder">
+          {showFeatureSet.placeholder ? <p>Default Info Graphic</p> : null}
           {showFeatureSet.chords ? <ChordCreator /> : null }
           {showFeatureSet.scales ? <ScaleCreator /> : null }
         </div>
