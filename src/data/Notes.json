@@ -9,5 +9,8 @@
     {"name" : "minor_triad", "steps": [0,3,7]},
     {"name" : "major_triad", "steps": [0,4,7]},
     {"name" : "augmented_triad", "steps": [0,4,8]}
+  ],
+  "scales": [
+    {"name": "", "steps": [], "modes": [""]}
   ]
 }
