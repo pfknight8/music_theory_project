@@ -12,3 +12,53 @@ if (noteSelect.charCodeAt(0) < 65 || noteSelect.charCodeAt(0) > 71){
 }
 
 /////////////////////////////////
+
+In adding scales to our Notes.json, which scheme would be most useful?
+
+{
+  "scales": [
+    // This first set is the Diatonic set...
+    {"name": "Ionian (Major)", "steps": [2, 2, 1, 2, 2, 2, 1]},
+    {"name": "Dorian", "steps": [2, 1, 2, 2, 2, 1, 2]},
+    {"name": "Phrygian", "steps": [1, 2, 2, 2, 1, 2, 2]},
+    {"name": "Lydian", "steps": [2, 2, 2, 1, 2, 2, 1]},
+    {"name": "Mixolydian", "steps": [2, 2, 1, 2, 2, 1, 2]},
+    {"name": "Aeolian (Minor)", "steps": [2, 1, 2, 2, 1, 2, 2]},
+    {"name": "Locrian", "steps": [1, 2, 2, 1, 2, 2, 2]},
+    // These begin other scales...
+    {"name": "Harmonic Major", "steps": [2, 2, 1, 2, 1, 3, 1]},
+    {"name": "Dorian Flat-5th", "steps": [2, 1, 2, 1, 3, 1, 2]},
+    etc...
+  ]
+}
+
+or
+
+{
+  "scales": [
+    {
+      "name": "Diatonic",
+      "steps": [2, 2, 1, 2, 2, 2, 1],
+      "modes": ["Ionian (Major)", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolian (Minor)", "Locrian"]
+    },
+    {
+      "name": "Harmonic Major",
+      "steps": [2, 2, 1, 2, 1, 3, 1],
+      "modes": ["Harmonic Major","Dorian \u266d5th","Phrygian \u266d4th", "Lydian \u266d3rd", "Mixolydian \u266d2nd", "Lydian #2nd #5th", "Locrian \u266d\u266d7th"]
+    },
+    {
+      "name": "Major Pentatonic",
+      "steps": [2, 2, 3, 2, 3],
+      "modes": ["Major", "Suspended Pentatonic", "Man Gong", "Ritusen", "Minor"]
+    },
+    etc...
+  ]
+}
+
+ In this initial build, I'm looking for users to select, rather than type in, a desired scale, but perhaps it would be good for users to be able to search for a specific scale eventually. Is there a better way to structure my data for flexibilty, while maintaining efficiency?
+
+-> With option 1, the page could be built to display one scale at a time. Users would choose a 'scale' from a dropdown menu or some other such means of selection. Could add a "set" key-value pair that would allow the ability to display scales as sets from this build.
+
+-> In the second option, the user could have multiple scales displayed as part of their set. I like this method, as it shows the mathematical relation between the various scales and, thus, how they relate as modes to others in their grouping. In the app, one would be able to build the steps of a given mode mathematically by searching the index of the desired mode and using that to shift the starting position of the steps array appropriately.
+
+For one scale at a time, option 1 makes the calculation easy, since the steps are loaded in from the data, instead of going through an additional calculation based on a mode selection that would occur in option 2. This may make our database larger, as it is not as compact as option 2. If want to display the set of modes associated with a scale, would need to search for all scales that share the set, and then go through the process of rendering them...this may be done better with the option 2 structure, as there would be no need to requery the dataset.
