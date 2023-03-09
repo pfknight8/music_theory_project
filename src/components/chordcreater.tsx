@@ -1,6 +1,6 @@
-import { useState } from "react"
-import Notes from "../data/Notes.json"
-import NoteSelector from "./noteSelector"
+import { useState } from "react";
+import Notes from "../data/Notes.json";
+import NoteSelector from "./noteSelector";
 
 const ChordCreator = () => {
   interface ChordSet {
@@ -8,8 +8,8 @@ const ChordCreator = () => {
     steps: Array<number>
   }
   const [noteSelect, setNoteSelect] = useState("C")
-  const [chordList, setChordList] = useState<Array<ChordSet>>([])
   const [noteQual, setNoteQual] = useState("natural")
+  const [chordList, setChordList] = useState<Array<ChordSet>>([])
 
   // This function is used to make the chords based on the selected note and the json files provided.
   const MakeChords = (indexOfNote: number) => {
