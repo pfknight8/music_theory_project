@@ -11,6 +11,24 @@
     {"name" : "augmented_triad", "steps": [0,4,8]}
   ],
   "scales": [
-    {"name": "", "steps": [], "modes": [""]}
+    {"name": "Ionian (Major)", "steps": [0, 2, 2, 1, 2, 2, 2, 1], "set": "Diatonic"},
+    {"name": "Dorian", "steps": [0, 2, 1, 2, 2, 2, 1, 2], "set": "Diatonic"},
+    {"name": "Phrygian", "steps": [0, 1, 2, 2, 2, 1, 2, 2], "set": "Diatonic"},
+    {"name": "Lydian", "steps": [0, 2, 2, 2, 1, 2, 2, 1], "set": "Diatonic"},
+    {"name": "Mixolydian", "steps": [0, 2, 2, 1, 2, 2, 1, 2], "set": "Diatonic"},
+    {"name": "Aeolian (Minor)", "steps": [0, 2, 1, 2, 2, 1, 2, 2], "set": "Diatonic"},
+    {"name": "Locrian", "steps": [0, 1, 2, 2, 1, 2, 2, 2], "set": "Diatonic"},
+    {"name": "Harmonic Major", "steps": [0, 2, 2, 1, 2, 1, 3, 1], "set": "Harmonic Major"},
+    {"name": "Dorian \u226D-5th", "steps": [0, 2, 1, 2, 1, 3, 1, 2], "set": "Harmonic Major"},
+    {"name": "Phrygian \u266d-4th", "steps": [0, 1, 2, 1, 3, 1, 2, 2], "set": "Harmonic Major"},
+    {"name": "Lydian \u266d-3rd", "steps": [0, 2, 1, 3, 1, 2, 2, 1], "set": "Harmonic Major"},
+    {"name": "Dorian \u226D-5th", "steps": [0, 1, 3, 1, 2, 2, 1, 2], "set": "Harmonic Major"},
+    {"name": "Lydian \u226F-2nd \u226F-5th", "steps": [0, 3, 1, 2, 2, 1, 2, 1], "set": "Harmonic Major"},
+    {"name": "Locrian \u266d\u266d-7th", "steps": [0, 1, 2, 2, 1, 2, 1, 3], "set": "Harmonic Major"},
+    {"name": "Major Pentatonic", "steps": [0, 2, 2, 3, 2, 3], "set": "Major Pentatonic"},
+    {"name": "Suspended Pentatonic", "steps": [0, 2, 3, 2, 3, 2], "set": "Major Pentatonic"},
+    {"name": "Man Gong", "steps": [0, 3, 2, 3, 2, 2], "set": "Major Pentatonic"},
+    {"name": "Ritusen", "steps": [0, 2, 3, 2, 2, 3], "set": "Major Pentatonic"},
+    {"name": "Minor Pentatonic", "steps": [0, 3, 2, 2, 3, 2], "set": "Major Pentatonic"}
   ]
 }

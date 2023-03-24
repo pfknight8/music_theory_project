@@ -7,12 +7,10 @@ const ChordCreator = () => {
     name: string,
     steps: Array<number>
   }
-  const [noteSelect, setNoteSelect] = useState("C")
-  const [noteQual, setNoteQual] = useState("natural")
   const [chordList, setChordList] = useState<Array<ChordSet>>([])
 
   // This function is used to make the chords based on the selected note and the json files provided.
-  const MakeChords = (indexOfNote: number) => {
+  const makeChords = (indexOfNote: number) => {
     let chordArr: any[] = [];
     Notes.chord_semitones.forEach(element => {
       let noteArr: any[] = [];
@@ -31,41 +29,9 @@ const ChordCreator = () => {
     setChordList(chordArr)
   }
 
-  // This function is what fires when the 'create chords' button is clicked. Currently, the functions here use the letter of the note, so some conversion of the notes to proper sharp/natural/flat status needs to be done in order to feed the proper index into the MakeChords function.
-  const handleSubmitChords = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    let noteSearch: string = ""
-    let indexOfNote: number = 0
-    if (noteQual === "sharp"){
-      noteSearch = `${noteSelect}\u266f`
-      if (noteSearch === "B\u266f"){
-        noteSearch = "C"
-      } else if (noteSearch === "E\u266f"){
-        noteSearch = "F"
-      }
-      indexOfNote = Notes.chromatic_sharp.indexOf(noteSearch)
-    } else if (noteQual === "flat"){
-      noteSearch = `${noteSelect}\u266d`
-      if (noteSearch === "C\u266d"){
-        noteSearch = "B"
-      } else if (noteSearch === "F\u266d"){
-        noteSearch = "E"
-      }
-      indexOfNote = Notes.chromatic_flat.indexOf(noteSearch)
-    } else {
-      noteSearch = noteSelect
-      indexOfNote = Notes.chromatic_sharp.indexOf(noteSearch)
-    }
-    MakeChords(indexOfNote)
-  }
-
   return (
     <div className="chord-creator">
-      <p>Chord component rendered.</p>
-      <form onSubmit={handleSubmitChords}>
-        <NoteSelector setNoteSelect={setNoteSelect} setNoteQual={setNoteQual}/>
-        <button id="note-select" type="submit">Create Chords</button>
-      </form>
+      <NoteSelector createFunction={makeChords}/>
       <section id="triad-list">
         <h3>Triad Chords</h3>
         <div>{chordList?.map((item, index) => (
@@ -81,11 +47,11 @@ const ChordCreator = () => {
   )
 }
 
+export default ChordCreator
+
 // Ideas:
 // - have toggle to display written on treble or bass cless (maybe tenor cleff as well?)
 // - have the user select a note, rather than type it in. Will help prevent breaking, and be more user friendly I think.
 // - the user can work in either sharps or flats
 // - the program will display all main chords based on the selected note being the root
 // - include note about inversions
-
-export default ChordCreator
