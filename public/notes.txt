@@ -18,16 +18,16 @@ In adding scales to our Notes.json, which scheme would be most useful?
 {
   "scales": [
     // This first set is the Diatonic set...
-    {"name": "Ionian (Major)", "steps": [2, 2, 1, 2, 2, 2, 1]},
-    {"name": "Dorian", "steps": [2, 1, 2, 2, 2, 1, 2]},
-    {"name": "Phrygian", "steps": [1, 2, 2, 2, 1, 2, 2]},
-    {"name": "Lydian", "steps": [2, 2, 2, 1, 2, 2, 1]},
-    {"name": "Mixolydian", "steps": [2, 2, 1, 2, 2, 1, 2]},
-    {"name": "Aeolian (Minor)", "steps": [2, 1, 2, 2, 1, 2, 2]},
-    {"name": "Locrian", "steps": [1, 2, 2, 1, 2, 2, 2]},
+    {"name": "Ionian (Major)", "steps": [2, 2, 1, 2, 2, 2, 1], "set": "Diatonic"},
+    {"name": "Dorian", "steps": [2, 1, 2, 2, 2, 1, 2], "set": "Diatonic",}
+    {"name": "Phrygian", "steps": [1, 2, 2, 2, 1, 2, 2], "set": "Diatonic"},
+    {"name": "Lydian", "steps": [2, 2, 2, 1, 2, 2, 1], "set": "Diatonic"},
+    {"name": "Mixolydian", "steps": [2, 2, 1, 2, 2, 1, 2], "set": "Diatonic"},
+    {"name": "Aeolian (Minor)", "steps": [2, 1, 2, 2, 1, 2, 2], "set": "Diatonic"},
+    {"name": "Locrian", "steps": [1, 2, 2, 1, 2, 2, 2], "set": "Diatonic"},
     // These begin other scales...
-    {"name": "Harmonic Major", "steps": [2, 2, 1, 2, 1, 3, 1]},
-    {"name": "Dorian Flat-5th", "steps": [2, 1, 2, 1, 3, 1, 2]},
+    {"name": "Harmonic Major", "steps": [2, 2, 1, 2, 1, 3, 1], "set": "Harmonic Major"},
+    {"name": "Dorian \u226D-5th", "steps": [2, 1, 2, 1, 3, 1, 2], "set": "Harmonic Major"},
     etc...
   ]
 }
@@ -44,7 +44,7 @@ or
     {
       "name": "Harmonic Major",
       "steps": [2, 2, 1, 2, 1, 3, 1],
-      "modes": ["Harmonic Major","Dorian \u266d5th","Phrygian \u266d4th", "Lydian \u266d3rd", "Mixolydian \u266d2nd", "Lydian #2nd #5th", "Locrian \u266d\u266d7th"]
+      "modes": ["Harmonic Major","Dorian \u266d5th","Phrygian \u266d-4th", "Lydian \u266d-3rd", "Mixolydian \u266d-2nd", "Lydian #-2nd #-5th", "Locrian \u266d\u266d-7th"]
     },
     {
       "name": "Major Pentatonic",
