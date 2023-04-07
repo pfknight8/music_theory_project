@@ -5,10 +5,18 @@
   "chromatic_flat" : ["C", "D\u266d", "D", "E\u266d", "E", "F", "G\u266d", "G", "A\u266d", "A", "B\u266d", "B"],
   "chromatic_sharp" : ["C", "C\u266f", "D", "D\u266f", "E", "F", "F\u266f", "G", "G\u266f", "A", "A\u266f", "B"],
   "chord_semitones" : [
-    {"name" : "diminished_triad", "steps": [0,3,6]},
-    {"name" : "minor_triad", "steps": [0,3,7]},
-    {"name" : "major_triad", "steps": [0,4,7]},
-    {"name" : "augmented_triad", "steps": [0,4,8]}
+    {"set": "triad", "name": "diminished_triad", "steps": [0,3,6]},
+    {"set": "triad", "name": "minor_triad", "steps": [0,3,7]},
+    {"set": "triad", "name": "major_triad", "steps": [0,4,7]},
+    {"set": "triad", "name": "augmented_triad", "steps": [0,4,8]},
+    {"set": "seventh", "name": "major_seventh", "steps": [0, 4, 7, 11]},
+    {"set": "seventh", "name": "dominant_seventh", "steps": [0, 4, 7, 10]},
+    {"set": "seventh", "name": "minor_major_seventh", "steps": [0, 3, 7, 11]},
+    {"set": "seventh", "name": "minor_seventh", "steps": [0, 3, 7, 10]},
+    {"set": "seventh", "name": "half_diminished_seventh", "steps": [0, 3, 6, 10]},
+    {"set": "seventh", "name": "diminished_seventh", "steps": [0, 3, 6, 9]},
+    {"set": "seventh", "name": "augmented_major_seventh", "steps": [0, 4, 8, 11]},
+    {"set": "other", "name": "Hendrix_chord", "steps": [0, 4, 7, 10, 15]}
   ],
   "scales": [
     {"name": "Ionian (Major)", "steps": [0, 2, 2, 1, 2, 2, 2, 1], "set": "Diatonic"},

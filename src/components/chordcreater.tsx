@@ -4,10 +4,11 @@ import NoteSelector from "./noteSelector";
 
 const ChordCreator = () => {
   interface ChordSet {
+    set: string,
     name: string,
     steps: Array<number>
   }
-  const [chordList, setChordList] = useState<Array<ChordSet>>([])
+  const [chordList, setChordList] = useState<Array<ChordSet>>([]);
 
   // This function is used to make the chords based on the selected note and the json files provided.
   const makeChords = (indexOfNote: number) => {
@@ -20,26 +21,43 @@ const ChordCreator = () => {
       };
       let noteArrLtr: any[] = [];
       for (let k=0; k<noteArr.length; k++) {
-        let noteIndex = noteArr[k]%12
-        noteArrLtr.push(Notes.chromatic[noteIndex])
+        let noteIndex = noteArr[k]%12;
+        noteArrLtr.push(Notes.chromatic[noteIndex]);
       }
-      chordArr.push({"name": element.name, "steps": noteArrLtr.splice(0)})
-      noteArr = []
+      chordArr.push({"set": element.set, "name": element.name, "steps": noteArrLtr.splice(0)});
+      noteArr = [];
     });
-    setChordList(chordArr)
+    setChordList(chordArr);
   }
 
   return (
     <div className="chord-creator">
       <NoteSelector createFunction={makeChords}/>
-      <section id="triad-list">
+      <section id="chord-listing">
         <h3>Triad Chords</h3>
-        <div>{chordList?.map((item, index) => (
-          <div key={index}>
-            {item.name} = {item.steps.join('-')}
-          </div>
-        ))}</div>
+        <div id="triad-list">
+          {chordList?.map((item, index) => { return (item?.set === "triad" ?
+            <div key={index}>
+              {item.name} = {item.steps.join('-')}
+            </div> : null)
+          })}
+        </div>
         <h3>Seventh Chords</h3>
+        <div id="seventh-list">
+          {chordList?.map((item, index) => { return (item?.set === "seventh" ?
+            <div key={index}>
+              {item.name} = {item.steps.join('-')}
+            </div> : null)
+          })}
+        </div>
+        <h3>Other Chords</h3>
+        <div id="other-list">
+          {chordList?.map((item, index) => { return (item?.set === "other" ?
+            <div key={index}>
+              {item.name} = {item.steps.join('-')}
+            </div> : null)
+          })}
+        </div>
         <p>This will be replaced; will need to refactor this section to display better, but for now have it set up in a crude way just to make sure that the basic functionality works.</p>
         <p>See pages on Inversions (link to page) and voicing (link to page).</p>
       </section>

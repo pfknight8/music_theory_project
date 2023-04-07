@@ -25,11 +25,14 @@ const ScaleCreator = () => {
   return (
     <div id="scale-creator">
       <NoteSelector createFunction={makeScales}/>
+      
       <section id="scale-display">
         <p>The scale displays here:</p>
-        <div>{scaleChoice}</div>
+        <div>{scaleChoice.join(' - ')}</div>
       </section>
     </div>
   )
 }
 export default ScaleCreator;
+
+// Need to build the <select><option></option></select> field to populate the scale choice
