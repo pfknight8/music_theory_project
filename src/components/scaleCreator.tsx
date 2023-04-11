@@ -3,8 +3,6 @@ import Notes from "../data/Notes.json";
 import NoteSelector from "./noteSelector";
 
 const ScaleCreator = () => {
-  // const [noteSelect, setNoteSelect] = useState("C")
-  // const [noteQual, setNoteQual] = useState("natural")
   const [scaleChoice, setScaleChoice] = useState<Array<String>>([])
   const [scaleSelect, setScaleSelect] = useState("Ionian (Major)")
 
@@ -18,12 +16,10 @@ const ScaleCreator = () => {
       noteIndex = (noteIndex + element)%12;
       scaleArr.push(Notes.chromatic[noteIndex]);
     });
-    console.log(scaleArr);
     setScaleChoice(scaleArr)
   }
 
   const handleSelect = (e: any) => {
-    console.log(e.target.value)
     setScaleSelect(e.target.value)
   }
 
@@ -45,5 +41,3 @@ const ScaleCreator = () => {
   )
 }
 export default ScaleCreator;
-
-// Need to build the <select><option></option></select> field to populate the scale choice
