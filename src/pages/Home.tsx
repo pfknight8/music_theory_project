@@ -1,5 +1,6 @@
 // import { useState } from "react"
 // import ChordCreator from "../components/chordcreater"
+import '../styles/circleTest.css';
 
 const Home = () => {
   // const [showChordComp, toggleChordComp] = useState(false)
@@ -10,6 +11,12 @@ const Home = () => {
       <div className="circle"></div>
       <div className="stage"><figure className="ball"><span className="shadow"></span></figure></div>
       <div className="stage"><figure className="poolball"><span className="poolshadow"></span><span className="number-circle"></span></figure></div>
+      <div className="logocontainer">
+        <div className="colorsbox red"></div>
+        <div className="colorsbox yellow"></div>
+        <div className="colorsbox green"></div>
+        <div className="colorsbox blue"></div>
+      </div>
     </div>
   )
 }
