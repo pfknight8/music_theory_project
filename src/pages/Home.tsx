@@ -1,6 +1,5 @@
 // import { useState } from "react"
 // import ChordCreator from "../components/chordcreater"
-import '../styles/circleTest.css';
 
 const Home = () => {
   // const [showChordComp, toggleChordComp] = useState(false)

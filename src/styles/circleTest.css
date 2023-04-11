@@ -52,7 +52,7 @@
   width: 200px;
   border-radius: 50%;
   /* position: relative; */
-  background: radial-gradient(circle at 50% 120%, #303030, #0A0A0A 80%, #000000 100%);
+  background: radial-gradient(circle at 50% 120%, #920000, #820000 80%, #720000 100%);
 }
 .poolball::before {
   content: "";
@@ -97,7 +97,7 @@
   position: absolute;
 }
 .number-circle::before {
-  content: "8";
+  content: "7";
   display: block;
   position: absolute;
   text-align: center;
@@ -112,6 +112,8 @@
   font-size: 400%;
   line-height: 104px;
 }
+
+/* Additional tests */
 
 .logocontainer {
   display: grid;

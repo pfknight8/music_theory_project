@@ -38,7 +38,7 @@ const ChordCreator = () => {
         <div id="triad-list">
           {chordList?.map((item, index) => { return (item?.set === "triad" ?
             <div key={index}>
-              {item.name} = {item.steps.join('-')}
+              {item.name} = {item.steps.join(' - ')}
             </div> : null)
           })}
         </div>
@@ -46,7 +46,7 @@ const ChordCreator = () => {
         <div id="seventh-list">
           {chordList?.map((item, index) => { return (item?.set === "seventh" ?
             <div key={index}>
-              {item.name} = {item.steps.join('-')}
+              {item.name} = {item.steps.join(' - ')}
             </div> : null)
           })}
         </div>
@@ -54,7 +54,7 @@ const ChordCreator = () => {
         <div id="other-list">
           {chordList?.map((item, index) => { return (item?.set === "other" ?
             <div key={index}>
-              {item.name} = {item.steps.join('-')}
+              {item.name} = {item.steps.join(' - ')}
             </div> : null)
           })}
         </div>
