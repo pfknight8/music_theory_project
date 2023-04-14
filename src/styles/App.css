@@ -1,11 +1,7 @@
+/* This file will contain css that relates universally to the displayed App features. */
+
 #App {
   text-align: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -34,6 +30,12 @@
 .component-link {
   /* font-size: calc(10px + 1vh); */
   color: #ECEEE8;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {

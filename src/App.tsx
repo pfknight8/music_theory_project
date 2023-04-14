@@ -6,6 +6,8 @@ import Docs from './pages/Docs';
 import About from './documents/About';
 import Interactives from './pages/Interactives';
 import { Voicing } from './documents/VoicingInversions';
+import ChordCreator from './components/chordcreater';
+import ScaleCreator from './components/scaleCreator';
 
 function App() {
   return (
@@ -19,7 +21,11 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="voicing" element={<Voicing />} />
           </Route>
-          <Route path="interactive" element={<Interactives />} />
+          <Route path="interactives" element={<Interactives />} >
+            <Route index element={<p>Default Info Graphic</p>} />
+            <Route path="chordCreator" element={<ChordCreator />} />
+            <Route path="scaleCreator" element={<ScaleCreator />} />
+          </Route>
         </Routes>
       </main>
     </div>

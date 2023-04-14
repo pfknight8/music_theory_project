@@ -5,7 +5,7 @@ const HeaderNav = () => {
     <header className="App-header">
       <NavLink className="nav-link title-link" to="/">Music Theoreticals</NavLink>
       <div id="header-nav">
-        <NavLink className="nav-link component-link" to="/interactive">Interactives</NavLink>
+        <NavLink className="nav-link component-link" to="/interactives">Interactives</NavLink>
         <NavLink className="nav-link component-link" to="/documents">Documents</NavLink>
       </div>
     </header>

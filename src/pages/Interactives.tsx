@@ -1,38 +1,47 @@
 // This page will be the holder for our interactive programs.
-import { useState } from "react"
-import ChordCreator from "../components/chordcreater"
-import ScaleCreator from "../components/scaleCreator"
+
+// import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+// import ChordCreator from "../components/chordcreater"
+// import ScaleCreator from "../components/scaleCreator"
+import { Outlet } from "react-router-dom"
 
 const Interactives = () => {
-  interface Feature {
-    [key: string]: boolean
-  };
-  const initialFeatures: Feature = {"placeholder": true, "chords": false, "scales": false}
+  const navigate = useNavigate()
 
-  const [showFeatureSet, toggleFeatureSet] = useState(initialFeatures)
+  // interface Feature {
+  //   [key: string]: boolean
+  // };
+  // const initialFeatures: Feature = {"placeholder": true, "chords": false, "scales": false}
+
+  // const [showFeatureSet, toggleFeatureSet] = useState(initialFeatures)
 
   const handleFeatures = (feature: string) => {
-    let updateFeature = {[feature]: !showFeatureSet[feature], placeholder: false}
-    if (!updateFeature[feature]){updateFeature.placeholder = true}
-    let newState: Feature = {...initialFeatures, ...updateFeature}
-    toggleFeatureSet(newState)
+    // let updateFeature = {[feature]: !showFeatureSet[feature], placeholder: false}
+    // if (!updateFeature[feature]){updateFeature.placeholder = true}
+    // let newState: Feature = {...initialFeatures, ...updateFeature}
+    // toggleFeatureSet(newState)
+    navigate(`/interactives/${feature}`)
   }
 
   return (
-    <div id="docs-page">
+    <div id="-page">
       <h1>Rendering of interactive materials</h1>
       <section>
         <h2>Button Holder</h2>
-        <button className="component-btn" onClick={() => handleFeatures("chords")}>{showFeatureSet.chords ? "Arrivederci!" : "Chords"}</button>
-        <button className="component-btn" onClick={() => handleFeatures("scales")}>{showFeatureSet.scales ? "Adios!" : "Scales"}</button>
+        <button className="component-btn" onClick={() => handleFeatures("chordCreator")}>Chords</button>
+          {/* {showFeatureSet.chords ? "Arrivederci!" : "Chords"}</button> */}
+        <button className="component-btn" onClick={() => handleFeatures("scaleCreator")}>Scales</button>
+          {/* {showFeatureSet.scales ? "Adios!" : "Scales"}</button> */}
       </section>
       <section>
         <h2>Render Here</h2>
-        <div className="component-holder">
+        <Outlet />
+        {/* <div className="component-holder">
           {showFeatureSet.placeholder ? <p>Default Info Graphic</p> : null}
           {showFeatureSet.chords ? <ChordCreator /> : null }
           {showFeatureSet.scales ? <ScaleCreator /> : null }
-        </div>
+        </div> */}
       </section>
     </div>
   )
