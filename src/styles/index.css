@@ -1,3 +1,5 @@
+/* This file will contain styling that applies universally to all pages */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,9 +17,3 @@ code {
 
 /* Test of 3D sphere */
 /* https://cssanimation.rocks/spheres/ */
-
-#Home-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
