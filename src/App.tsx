@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './styles/App.css';
-import './styles/circleTest.css';
 import HeaderNav from './components/HeaderNav';
 import Home from './pages/Home';
 import Docs from './pages/Docs';
@@ -18,7 +17,7 @@ function App() {
           <Route path="documents" element={<Docs />} >
             <Route index element={<div className="stage"><figure className="poolball"><span className="poolshadow"></span><span className="number-circle"></span></figure></div>} />
             <Route path="about" element={<About />} />
-            <Route path="Voicing" element={<Voicing />} />
+            <Route path="voicing" element={<Voicing />} />
           </Route>
           <Route path="interactive" element={<Interactives />} />
         </Routes>

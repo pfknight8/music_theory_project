@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Notes from "../data/Notes.json";
 import NoteSelector from "./noteSelector";
 
@@ -59,7 +60,7 @@ const ChordCreator = () => {
           })}
         </div>
         <p>This will be replaced; will need to refactor this section to display better, but for now have it set up in a crude way just to make sure that the basic functionality works.</p>
-        <p>See pages on Inversions (link to page) and voicing (link to page).</p>
+        <p>See pages on Inversions and <Link to="/documents/voicing">Voicing</Link>.</p>
       </section>
     </div>
   )
